@@ -19,8 +19,8 @@
             </div>
             <!-- /.logo -->
             <div class="inputs">
-                <input type="text" placeholder="Nuovo Todo">
-                <button>Aggiungi</button>
+                <input type="text" placeholder="Nuovo Todo" v-model="newTask">
+                <button @click="addTask">Aggiungi</button>
             </div>
             <!-- /.inputs -->
             <div class="todo_list">
