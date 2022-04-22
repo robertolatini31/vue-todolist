@@ -84,6 +84,8 @@ const app = new Vue ({
             this.recentlyDeletedTasks.forEach(element => {
                 this.tasks.unshift(element);
             });
+            const allArray = this.recentlyDeletedTasks.length;
+                this.recentlyDeletedTasks.splice(0, allArray);
         }
     }
 });
