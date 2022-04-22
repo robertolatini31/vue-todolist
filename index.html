@@ -25,7 +25,7 @@
             <!-- /.inputs -->
             <div class="todo_list">
                 <ul>
-                    <li v-for="(task, index) in tasks">
+                    <li v-for="(task, index) in tasks" @click="doneTrue(index)">
                         <span :class="task.done === true ? 'done' : ''">{{ task.text }}</span>
                         <i class="fa-solid fa-xmark" @click="removeTask(index)"></i>
                     </li>
