@@ -25,25 +25,40 @@
             <!-- /.inputs -->
             <div class="todo_list">
                 <ul class="todo_ul">
-                    <lh>Todo List</lh>
+                    <li class="li_title">Todo List</li>
                     <li style="justify-content: center;" v-if="tasks.length === 0">Nulla da fare 🥳 </li>
                     <li v-for="(task, index) in tasks">
                         <span>{{ task.text }}</span>
                         <div class="icons">
                             <i class="fa-solid fa-circle-check not_done" @click="goToCompleted(index)"></i>
-                            <i class="fa-solid fa-trash" @click="removeTask(index)"></i>
+                            <i class="fa-solid fa-trash" @click="goToDeleted(index)"></i>
                         </div>
                         <!-- /.icons -->
                     </li>
                 </ul>
                 <!-- /. todo_ul  -->
                 <ul class="completed_ul">
-                    <lh>Completed</lh>
+                    <li class="li_title">Completed</li>
                     <li style="justify-content: center;" v-if="completedTasks.length === 0">😴</li>
                     <li v-for="(task, index) in completedTasks">
                         <span>{{ task.text }}</span>
                         <div class="icons">
                             <i class="fa-solid fa-arrow-rotate-left" @click="goToTasks(index)"></i>
+                        </div>
+                        <!-- /.icons -->
+                    </li>
+                </ul>
+                <!-- /. completed_ul  -->
+                <ul class="deleted_ul">
+                    <li class="delete_title li_title">
+                        <span>Deleted</span> 
+                        <i class="fa-solid fa-dumpster-fire" @click="deleteAll"></i>
+                    </li>
+                    <li style="justify-content: center;" v-if="deletedTasks.length === 0">🗑</li>
+                    <li v-for="(task, index) in deletedTasks">
+                        <span>{{ task.text }}</span>
+                        <div class="icons">
+                            <i class="fa-solid fa-trash-arrow-up" @click="cancelDelete(index)"></i>
                         </div>
                         <!-- /.icons -->
                     </li>

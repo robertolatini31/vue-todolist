@@ -26,6 +26,16 @@ const app = new Vue ({
                 text: 'Fare il bucato',
                 done: true
             }
+        ],
+        deletedTasks: [
+            {
+                text: 'Fare la spesa',
+                done: true
+            },
+            {
+                text: 'Fare il bucato',
+                done: true
+            }
         ]
     },
     methods: {
@@ -50,6 +60,21 @@ const app = new Vue ({
         goToTasks(index) {
             this.tasks.unshift(this.completedTasks[index]);
             this.completedTasks.splice(index, 1);
+        },
+        goToDeleted(index) {
+            this.deletedTasks.unshift(this.tasks[index]);
+            this.tasks.splice(index, 1);
+        },
+        cancelDelete(index) {
+            this.tasks.unshift(this.deletedTasks[index]);
+            this.deletedTasks.splice(index, 1);
+        },
+        deleteAll() {
+            const confirm = prompt('sei sicuro di eliminare tutto? [Y/N]');
+            if (confirm === 'Y') {
+                const allArray = this.deletedTasks.length;
+                this.deletedTasks.splice(0, allArray);
+            }
         }
     }
 });
