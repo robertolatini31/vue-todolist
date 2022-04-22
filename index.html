@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todolist Vue</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
@@ -13,9 +13,30 @@
 
     <div id="app">
 
+        <div class="container">
+            <div class="logo">
+                <img src="./assets/img/logo.png" alt="">
+            </div>
+            <!-- /.logo -->
+            <div class="inputs">
+                <input type="text" placeholder="Nuovo Todo">
+                <button>Aggiungi</button>
+            </div>
+            <!-- /.inputs -->
+            <div class="todo_list">
+                <ul>
+                    <li v-for="task in tasks">
+                        <span>{{ task.text }}</span>
+                        <i class="fa-solid fa-xmark"></i>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.todo_list -->
+
+        </div>
+        <!-- /.container -->
 
 
-        
     </div>
     <!-- /#app -->
 
