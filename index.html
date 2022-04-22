@@ -19,7 +19,7 @@
             </div>
             <!-- /.logo -->
             <div class="inputs">
-                <input type="text" placeholder="Nuovo Todo" v-model="newTask">
+                <input type="text" placeholder="Nuovo Todo" v-model="newTask" @keyup.enter="addTask">
                 <button @click="addTask">Aggiungi</button>
             </div>
             <!-- /.inputs -->
