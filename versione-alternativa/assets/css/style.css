@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    background-color: cornflowerblue;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem;  
+}
+
+.logo, .inputs {
+    text-align: center;
+}
+
+.logo {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.logo>img {
+    width: 300px;
+}
+
+.inputs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 0.6rem;
+    row-gap: 1rem;
+}
+
+.inputs>input, .inputs>button {
+    border-radius: 12px;
+    border: none;
+}
+
+.inputs>input {
+    padding: 0.5rem;
+    /* margin: 0.5rem 0.5rem; */
+    width: 300px;
+}
+
+
+.inputs>button {
+    padding: 0.5rem 0.7rem;
+    background-color: #efefef;
+}
+
+.todo_list {
+    display: flex;
+    justify-content: center;
+}
+
+.todo_list>ul {
+    list-style: none;
+    margin: 3rem 0;
+    padding: 2rem;
+    background-color: #f5f7f7;
+    border-radius: 12px;
+}
+
+.todo_list li {
+    border-bottom: 1px solid grey;
+    width: 350px;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+.not_done {
+    color: palevioletred;
+}
+
+.yes_done {
+    color: rgb(86, 138, 86);
+}
