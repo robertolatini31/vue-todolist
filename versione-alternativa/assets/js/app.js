@@ -13,6 +13,17 @@ const app = new Vue ({
             },
             {
                 text: 'Fare il bucato',
+                done: false
+            }
+        ],
+        completedTasks: [
+            
+            {
+                text: 'Fare la spesa',
+                done: true
+            },
+            {
+                text: 'Fare il bucato',
                 done: true
             }
         ]
@@ -31,12 +42,14 @@ const app = new Vue ({
                 this.newTask = '';
             }
         },
-        doneTrue(index) {
-           if (this.tasks[index].done !== true) {
-            this.tasks[index].done = true;
-           } else {
-            this.tasks[index].done = false;
-           }
+        goToCompleted(index) {
+            this.completedTasks.unshift(this.tasks[index]);
+            this.tasks.splice(index, 1);
+            
+        },
+        goToTasks(index) {
+            this.tasks.unshift(this.completedTasks[index]);
+            this.completedTasks.splice(index, 1);
         }
     }
 });
@@ -53,3 +66,21 @@ const app = new Vue ({
 // - Cliccando sulla "X" l'utente puó cancellare una task
 // - Se non ci sono piu task nella lista, mostrate un messaggio tipo "Nulla da fare"
 // - L'utente vuole poter indicare che la task é stata completata (con un icona cliccabile)
+
+
+// ## Bonus-extra (opzionale)
+// -1 Quando una task é stata completa allora l'utente vuole che venga inserita 
+//     in un'altra colonna tipo "tasks completate"
+
+// -2 se una task é stata marcata come completa per sbaglio allora vuole poterla 
+//     rimettere nella todo list (cliccando su un altra icona)
+
+// -3 ah non é finita, dice che quando cancella una task non vuole che questa venga subito 
+//    rimossa, ma vuole che resti visibile ma venga spostata in una colonna tipo "cestino"
+
+// -4 si, l'utente é un rompi scatole, dice infine che vuole poter rimuovere tutte le tasks 
+//     nel cestino cliccando su un pulsante tipo "svuota cestino"
+
+// -5 Il nostro utente per ora sembra non avere altre richieste ... ma chissá se 
+// dopo gli viene in mente che vuole anche poter rimettere una task cancellata 
+// nella lista di tasks da fare, magari l'ha cancellata per sbaglio...

@@ -59,33 +59,52 @@ body {
 .todo_list {
     display: flex;
     justify-content: center;
+    column-gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.todo_ul {
+    width: 40%;
+}
+
+.todo_completed {
+    width: 30%;
 }
 
 .todo_list>ul {
     list-style: none;
     margin: 3rem 0;
-    padding: 2rem;
+    padding: 1rem;
     background-color: #f5f7f7;
     border-radius: 12px;
 }
 
 .todo_list li {
-    border-bottom: 1px solid grey;
-    width: 350px;
+    width: 100%;
     padding: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin: 0.5rem 0;
     display: flex;
     justify-content: space-between;
+    background-color: #b0c4de7a;
+    border-radius: 4px;
 }
 
-.done {
+/* .done {
     text-decoration: line-through;
-}
+} */
 
 .not_done {
     color: palevioletred;
 }
 
-.yes_done {
+/* .yes_done {
     color: rgb(86, 138, 86);
+} */
+
+lh {
+    font-weight: bold;
+}
+
+.todo_list i {
+    cursor: pointer;
 }

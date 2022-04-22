@@ -24,17 +24,31 @@
             </div>
             <!-- /.inputs -->
             <div class="todo_list">
-                <ul>
+                <ul class="todo_ul">
+                    <lh>Todo List</lh>
                     <li style="justify-content: center;" v-if="tasks.length === 0">Nulla da fare 🥳 </li>
                     <li v-for="(task, index) in tasks">
-                        <span :class="task.done === true ? 'done' : ''">{{ task.text }}</span>
+                        <span>{{ task.text }}</span>
                         <div class="icons">
-                            <i :class="task.done === false ? 'not_done' : 'yes_done' " class="fa-solid fa-circle-check" @click="doneTrue(index)"></i>
+                            <i class="fa-solid fa-circle-check not_done" @click="goToCompleted(index)"></i>
                             <i class="fa-solid fa-trash" @click="removeTask(index)"></i>
                         </div>
                         <!-- /.icons -->
                     </li>
                 </ul>
+                <!-- /. todo_ul  -->
+                <ul class="completed_ul">
+                    <lh>Completed</lh>
+                    <li style="justify-content: center;" v-if="completedTasks.length === 0">😴</li>
+                    <li v-for="(task, index) in completedTasks">
+                        <span>{{ task.text }}</span>
+                        <div class="icons">
+                            <i class="fa-solid fa-arrow-rotate-left" @click="goToTasks(index)"></i>
+                        </div>
+                        <!-- /.icons -->
+                    </li>
+                </ul>
+                <!-- /. completed_ul  -->
             </div>
             <!-- /.todo_list -->
 
