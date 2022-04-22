@@ -15,6 +15,11 @@ const app = new Vue ({
                 done: true
             }
         ]
+    },
+    methods: {
+        removeTask(index) {
+            this.tasks.splice(index, 1);
+        }
     }
 });
 
@@ -29,3 +34,7 @@ const app = new Vue ({
 // Stampare all'interno di una lista, 
 // un item per ogni todo. Se la proprietà done 
 // è uguale a true, visualizzare il testo del todo sbarrato.
+
+// MILESTONE 2
+// Visualizzare a fianco ad ogni item ha una "x": 
+// cliccando su di essa, il todo viene rimosso dalla lista.
