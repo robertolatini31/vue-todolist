@@ -22,12 +22,14 @@ const app = new Vue ({
             this.tasks.splice(index, 1);
         },
         addTask() {
-            const createdTask = {
-                text: this.newTask,
-                done: false
+            if (this.newTask.length !== 0) {
+                const createdTask = {
+                    text: this.newTask,
+                    done: false
+                }
+                this.tasks.unshift(createdTask);
+                this.newTask = '';
             }
-            this.tasks.push(createdTask);
-            this.newTask = '';
         },
         doneTrue(index) {
            if (this.tasks[index].done !== true) {
