@@ -52,7 +52,8 @@
                 <ul class="deleted_ul">
                     <li class="delete_title li_title">
                         <span>Deleted</span> 
-                        <i class="fa-solid fa-dumpster-fire" @click="deleteAll"></i>
+                        <i class="fa-solid fa-dumpster-fire burn_icon" @click="deleteAll" :class="deletedTasks.length === 0 ? 'd_none' : 'd_block'"></i>
+                        <i class="fa-solid fa-recycle return_icon" :class="deletedTasks.length === 0 ? 'd_block' : 'd_none'" @click="annulDeleteAll"></i>
                     </li>
                     <li style="justify-content: center;" v-if="deletedTasks.length === 0">🗑</li>
                     <li v-for="(task, index) in deletedTasks">

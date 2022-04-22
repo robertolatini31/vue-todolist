@@ -36,7 +36,8 @@ const app = new Vue ({
                 text: 'Fare il bucato',
                 done: true
             }
-        ]
+        ],
+        recentlyDeletedTasks: []
     },
     methods: {
         removeTask(index) {
@@ -72,9 +73,17 @@ const app = new Vue ({
         deleteAll() {
             const confirm = prompt('sei sicuro di eliminare tutto? [Y/N]');
             if (confirm === 'Y') {
+                this.deletedTasks.forEach(element => {
+                    this.recentlyDeletedTasks.push(element)
+                });
                 const allArray = this.deletedTasks.length;
                 this.deletedTasks.splice(0, allArray);
             }
+        },
+        annulDeleteAll() {
+            this.recentlyDeletedTasks.forEach(element => {
+                this.tasks.unshift(element);
+            });
         }
     }
 });

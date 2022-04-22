@@ -115,6 +115,18 @@ body {
     background-color: transparent!important;
 }
 
-.delete_title i {
+.delete_title .burn_icon {
     color: rgb(139, 2, 2);
+}
+
+.delete_title .return_icon {
+    color: rgb(82, 193, 82);
+}
+
+.d_none {
+    display: none;
+}
+
+.d_block {
+    display: block;
 }
